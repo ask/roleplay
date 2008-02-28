@@ -1,0 +1,46 @@
+Revision history for roleplay
+
+roleplay v0.8     Wed Jan 16 11:51:00 GMT+2 2007 [askh@opera.com]
+
+    - Roleplay now passes all tests in the Perl6::Roles test suite. :)
+
+    - Runtime composition seems to work now.
+
+    - Now does conflict resolution, summation of roles, roles are not
+      allowed to inherit from other roles (only use them as roles), requires
+
+    - does() now works properly. It was really incomplete before.
+
+    - has_role(instance, role, **kwargs) is now has_role(cls, *args,
+      **kwargs) to summate multiple roles at a time.
+
+    - Changed license to GPLv2. I ported the Perl6::Roles unit tests to
+      python and they are GPL, so I'll change to be sure.
+
+roleplay v0.12    Mon Jan 14 09:26:00 GMT+2 2007 [askh@opera.com]
+
+    - Now dies on conflict
+
+    - apply flattened some methods from the role base class that shouldn't
+      be there. fixed.
+
+    - does() now traverses the method resolution order.
+
+    - looks like the dream of using a role in the class definition is
+      shattered :( The new syntax is:
+
+        class Foo(object):
+            def hello(self):
+                return "hello world"
+
+        does(Foo, Role1, Role2, Role3, ..., RoleN)
+
+
+
+roleplay v0.11    Mon Jan 14 09:26:00 GMT+2 2007 [askh@opera.com]
+
+    - Just bolds out the fact that this is an alpha release.
+
+roleplay v0.1    Sat Jan 12 09:26:00 GMT+2 2007 [askh@opera.com]
+
+    - Initial version. :)
